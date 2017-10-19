@@ -1,0 +1,53 @@
+<html>
+<head>
+	<title>My Mapbox GL JS Map</title>
+
+	<!-- Link to JQuery library (used for modal) -->	
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+	<!-- Link to Mapbox GL JS library -->	
+	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.js'></script>
+
+	<!-- Link to Mapbox GL JS css stylesheet -->	
+	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.css' rel='stylesheet' />
+
+	<!-- Link to our custom stylesheet -->	
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+	<!-- Map  -->	
+	<div id="map"></div>
+
+	<!-- Info window (shows info about parks when hovering over a park)  -->	
+	<div class='map-overlay' id='features'>
+		<h1>THE WORLD OF FLOWERS</h1>
+		<div id='info-window-body'>
+			<p>"Emblazoned with beauty, this floral map shows the origins of 117 of man's favorite flowers. As people began to move from one part of the world to another, they carried plants with them. Explorers, conquerors, and adventurers returned to their homelands with flowers from far-off places. Colonists carried seeds and bulbs to the New World. Some have done so well in their adopted regions that their beginnings are seldom remembered."</p><p> - National Geographic, May 1968</p>
+		</div>
+	</div>
+
+	<!-- Map legend (content populated by our javascript) -->	
+	<div class='map-overlay' id='legend'></div>	
+	
+	<!-- "About this map" modal (hidden by default) -->	
+	<div class='modal'>
+		<h1 class='modal-title'>ABOUT THIS PROJECT</h1>
+		<div class='modal-body'><p>This map re-creates an original National Geographic map by Geographic artist Ned Seidler with consultation by Dr. Mildred E. Mathias, Professor of Botany at the University of California Los Angeles. This map was created in the Scripting Civic Engagement seminar at the University of Virginia (Fall 2017), taught by Andrea Hansen Phillips.</p>
+
+		<img src="img/10-flowers.jpg" alt="Original National Geographic World of Flowers Map" width="600" height="317">
+		<p>The World of Flowers - National Geographic, May 1968</p>
+
+		<p>Map data courtesy of <a href='https://www.mapbox.com/studio/'>Mapbox Studio</a> and <a href='https://www.nationalgeographic.com/'>National Geographic</a></p><p>For questions or to improve this map, contact <a href='mailto:psv6ba@virginia.edu'>Pia von Barby, MLA 2018</a></p></div>
+		<button class='close-button'>&times;</button>  	<!-- A special "x" character (the multiply sign) used in close buttons -->	
+	</div>
+	<div id='screen'></div>
+
+	<!-- Button to hide or show "About this map" modal -->	
+	<button type='button' class='button-default' id="about">ABOUT</button> <!-- Button to hide or show modal -->
+</body>
+
+<!-- Link to our custom javascript -->	
+<script src="map.js"></script>
+ </html>
